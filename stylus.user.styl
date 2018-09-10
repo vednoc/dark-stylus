@@ -75,3 +75,21 @@
       background-color $darker !important
 
   // * Icons
+  .svg-icon
+    fill $icon
+
+  // * Extension popup.
+  #stylus-popup
+    .entry
+      &:nth-child(even)
+        background-color $shadow
+      // * Style position.
+      &:nth-child(-n+10):before,
+      &:nth-child(11):before
+        color $light
+      // * On hover.
+      .style-name::before
+        transition 200ms ease-in-out
+        z-index -1
+        background linear-gradient(to right, $darker 0%, transparent 100%)
+
