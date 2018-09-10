@@ -133,3 +133,15 @@
         option
           color $light
           background-color $dark
+
+
+  #header
+    border none
+    color $light
+    background-color $darker
+    @media (max-width: 850px)
+      min-height 37px !important
+      height 2rem
+      &:hover
+        height: auto
+
