@@ -145,3 +145,13 @@
       &:hover
         height: auto
 
+
+  // * Warnings in UserCSS.
+  .warnings
+    max-height 40vh
+    padding 0.5rem
+    border 2px dashed $red
+    background-color $dark
+    @media (max-width: 850px)
+      max-height 25vh !important
+
