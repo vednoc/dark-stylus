@@ -61,3 +61,17 @@
   $green   = var(--green)
   $green   = var(--green)
 
+  body 
+    color $light !important
+    background-color $dark !important
+    input, button, select
+      transition: 0.3s ease-in-out
+    a
+      color $light
+      &:hover
+        color $lighter
+    input[type="checkbox"]:not(.slider)
+      border-color $dark
+      background-color $darker !important
+
+  // * Icons
