@@ -93,3 +93,43 @@
         z-index -1
         background linear-gradient(to right, $darker 0%, transparent 100%)
 
+
+  // * UserCSS popup.
+  #message-box
+    background-color $shadow
+
+    &-title
+      background-color $darker
+
+    &-contents
+      background-color $dark
+      .config-body label:not(:first-child)
+        border-color $darker
+
+      // * On/off switches.
+      .onoffswitch span
+        background-color $darker
+      .onoffswitch span::before
+        transition 100ms ease-in-out
+        background-color $dark
+        box-shadow inset 0 0 3px -1px $light, 0 3px 13px 0 $shadow
+      .onoffswitch input:checked + span::before
+        background-color $accent
+
+      // * Regular text inputs.
+      .config-text input
+        transition 200ms ease-in-out
+        border-radius 4px
+        color $light
+        border 1px solid $darker
+        background-color $dark
+
+      // * Regular select elements.
+      .config-select select
+        transition 200ms ease-in-out
+        border-radius 4px
+        color $light
+        border-color $darker
+        option
+          color $light
+          background-color $dark
