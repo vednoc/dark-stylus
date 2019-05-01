@@ -155,3 +155,22 @@
     @media (max-width: 850px)
       max-height 25vh !important
 
+
+// Fix white page for UserCSS files.
+@-moz-document regexp(".*\.user\.(css|styl|stylus|less)")
+    :root
+        --dark    dark
+        --darker  darker
+        --light   light
+        --lighter lighter
+        --accent  accent
+
+    $dark    = var(--dark)
+    $darker  = var(--darker)
+    $light   = var(--light)
+    $lighter = var(--lighter)
+    $accent  = var(--accent)
+
+    body
+        color $lighter
+        background-color $dark
