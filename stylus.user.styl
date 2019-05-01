@@ -73,6 +73,19 @@
     $radius  = var(--radius)
     $buttons = calc(var(--radius) / 2)
 
+    // * Colors mixin.
+    colors(x y z)
+        if x is a 'call'
+            color x !important
+        if y is a 'call'
+            border-color y !important
+        if z is a 'call'
+            background-color z !important
+
+    // * Border radius mixin.
+    radius()
+        border-radius arguments
+
   body 
     color $light !important
     background-color $dark !important
