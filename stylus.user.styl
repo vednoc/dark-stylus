@@ -182,7 +182,7 @@
 
 
 // Fix white page for UserCSS files.
-@-moz-document regexp(".*\.user\.(css|styl|stylus|less)")
+@-moz-document regexp('^file://.*\.user\.(css|styl|stylus|less)$')
     :root
         --dark    dark
         --darker  darker
