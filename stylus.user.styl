@@ -30,7 +30,7 @@
 
 ==/UserStyle== */
 
-@-moz-document regexp("chrome-extension://.*"), regexp("moz-extension://.*")
+@-moz-document regexp('^(moz|chrome)-extension://.*$')
     :root
         --dark    dark
         --darker  darker
