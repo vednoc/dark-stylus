@@ -90,12 +90,14 @@
         colors $lighter 0 $dark
 
     #header
-        border-style solid
         colors $lighter $darker $dark
         box-shadow 0 0 16px 0 $shadow
         h1, summary
             colors $light 0 0
+        @media (min-width: 850px)
+            border-right-style solid
         @media (max-width: 850px)
+            border-bottom-style solid
             transition 0.15s ease
             max-height 45px
             &:hover
