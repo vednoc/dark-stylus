@@ -108,6 +108,15 @@
             &:hover
                 max-height 300px
 
+    // * UserCSS warnings.
+    .warnings
+        padding 0.5rem
+        border 1px dashed
+        colors 0 $red $dark
+        // TODO: Custom setting.
+        @media (max-width: 850px)
+            max-height 30vh !important
+
 
 // Fix white page for UserCSS files.
 @-moz-document regexp('^file://.*\.user\.(css|styl|stylus|less)$')
