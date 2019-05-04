@@ -89,6 +89,11 @@
     body
         colors $lighter 0 $dark
 
+        // ? UserCSS -> reset header's height.
+        .has-warnings #header
+            min-height unset
+            max-height 40px
+
     #header
         colors $lighter $darker $dark
         box-shadow 0 0 16px 0 $shadow
@@ -99,7 +104,7 @@
         @media (max-width: 850px)
             border-bottom-style solid
             transition 0.15s ease
-            max-height 45px
+            max-height 40px
             &:hover
                 max-height 300px
 
