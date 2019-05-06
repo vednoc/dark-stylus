@@ -130,6 +130,22 @@
             &:hover
                 max-height 300px
 
+    #stylus-popup
+        .entry
+            // Striped colors.
+            &:nth-child(even)
+                colors 0 0 $t
+                background linear-gradient(90deg, $darker -100%, $t)
+            // Style position.
+            &:nth-child(-n + 10):before, &:nth-child(11):before
+                colors $lighter 0 0
+            &:hover
+                background linear-gradient(90deg, $darker, $t)
+        .style-name::before
+            z-index -1
+            transition 0.15s ease
+            background none
+
     // * UserCSS warnings.
     .warnings
         padding 0.5rem
