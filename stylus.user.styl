@@ -93,6 +93,23 @@
             colors $light 0 0 
             &:hover
                 colors $accent 0 0
+        input[type="checkbox"]
+            transition 0.15s ease
+            colors 0 $lighter 0
+            &:hover
+                colors 0 $lighter $lighter
+            &.checked, &:checked
+                colors 0 $lighter 0
+                + .svg-icon.checked
+                    fill $accent !important
+            &.disabled, &:disabled
+                opacity 0.5
+                colors 0 $lighter 0
+                + .svg-icon.checked
+                    opacity 0.5
+                    fill $lighter !important
+                    + span 
+                        colors $lighter 0 0
 
         // ? UserCSS -> reset header's height.
         .has-warnings #header
