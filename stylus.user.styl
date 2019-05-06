@@ -88,6 +88,11 @@
 
     body
         colors $lighter 0 $dark
+        a
+            transition 0.15s ease
+            colors $light 0 0 
+            &:hover
+                colors $accent 0 0
 
         // ? UserCSS -> reset header's height.
         .has-warnings #header
