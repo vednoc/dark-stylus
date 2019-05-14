@@ -112,12 +112,20 @@
                         colors $lighter 0 0
         select
             transition 0.15s ease
-            colors $light $darker $darker
+            colors $light $darker $dark
             box-shadow 0 2px 4px 0 inset $shadow
             + .svg-icon
                 fill $light !important
             option
                 colors $light 0 $dark
+        input, button
+            border 1px solid
+            transition 0.15s ease
+            background none
+            colors $lighter $darker $dark
+            box-shadow 0 2px 4px 0 inset $shadow
+            &:hover, &:focus
+                colors $light 0 $darker
 
         // ? UserCSS -> reset header's height.
         .has-warnings #header
