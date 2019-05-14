@@ -132,6 +132,19 @@
             min-height unset
             max-height 40px
 
+    // * Dropdowns.
+    .dropdown
+        .dropdown-content
+            radius $radius
+            colors $lighter 0 $dark
+            box-shadow 0 4px 8px 0 $shadow, 0 0 0 1px $darker !important
+            a:first-child
+                radius $radius $radius 0 0
+            a:last-child
+                radius 0 0 $radius $radius
+            a:hover
+                colors $light 0 $darker
+
     #header
         colors $lighter $darker $dark
         box-shadow 0 0 16px 0 $shadow
