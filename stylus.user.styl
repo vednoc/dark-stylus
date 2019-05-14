@@ -110,6 +110,14 @@
                     fill $lighter !important
                     + span 
                         colors $lighter 0 0
+        select
+            transition 0.15s ease
+            colors $light $darker $darker
+            box-shadow 0 2px 4px 0 inset $shadow
+            + .svg-icon
+                fill $light !important
+            option
+                colors $light 0 $dark
 
         // ? UserCSS -> reset header's height.
         .has-warnings #header
