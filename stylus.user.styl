@@ -215,6 +215,10 @@
         // Body.
         &-contents
             colors 0 0 $dark
+            .config-body label
+                colors 0 $darker 0
+                &:last-child
+                    padding-bottom 0.75em
             // * On/off switches.
             .onoffswitch
                 > span
@@ -227,6 +231,11 @@
                 > input:checked + span::before
                     colors 0 0 $accent
                     box-shadow 0 0 4px 2px inset $shadow
+            .config-color
+                .color-swatch
+                    border none
+                    radius $radius
+                    box-shadow 0 0 0 1px $darker
         // Footer.
         &-buttons
             colors $lighter 0 $dark
