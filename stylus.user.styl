@@ -111,6 +111,7 @@
                     + span
                         colors $lighter 0 0
         select
+            radius $radius
             transition 0.15s ease
             colors $light $darker $dark
             box-shadow 0 2px 4px 0 inset $shadow
@@ -122,9 +123,10 @@
             border 1px solid
             transition 0.15s ease
             background none
+            radius $radius
             colors $lighter $darker $dark
             box-shadow 0 2px 4px 0 inset $shadow
-            &:hover, &:focus
+            &:focus
                 colors $light 0 $darker
 
         // ? UserCSS -> reset header's height.
