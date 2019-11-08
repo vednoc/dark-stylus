@@ -52,6 +52,7 @@
         --radius  b_radius
         scrollbar-color: var(--darker) var(--dark)
 
+    i        = !important
     $dark    = var(--dark)
     $darker  = var(--darker)
     $light   = var(--light)
@@ -73,61 +74,61 @@
     $radius  = var(--radius)
     $buttons = calc(var(--radius) / 2)
 
-    // * Colors mixin.
-    colors(x y z)
-        if x is a 'call'
-            color x !important
-        if y is a 'call'
-            border-color y !important
-        if z is a 'call'
-            background-color z !important
+    // Colors mixin.
+    c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1)
+        if x is a 'call' or x is a 'rgba'
+            color: xi is 0 ? x : x i
+        if y is a 'call' or y is a 'rgba'
+            border-color: yi is 0 ? y : y i
+        if z is a 'call' or z is a 'rgba'
+            background-color: zi is 0 ? z : z i
 
     // * Border radius mixin.
     radius()
         border-radius arguments
 
     body
-        colors $lighter 0 $dark
+        c $lighter 0 $dark
         a
             transition 0.15s ease
-            colors $light 0 0
+            c $light 0 0
             &:hover
-                colors $accent 0 0
+                c $accent 0 0
         input[type="checkbox"]:not(.slider)
             transition 0.15s ease
-            colors 0 $lighter 0
+            c 0 $lighter 0
             &:hover
-                colors 0 $lighter $lighter
+                c 0 $lighter $lighter
             &.checked, &:checked
-                colors 0 $lighter 0
+                c 0 $lighter 0
                 + .svg-icon.checked
                     fill $accent !important
             &.disabled, &:disabled
                 opacity 0.5
-                colors 0 $lighter 0
+                c 0 $lighter 0
                 + .svg-icon.checked
                     opacity 0.5
                     fill $lighter !important
                     + span
-                        colors $lighter 0 0
+                        c $lighter 0 0
         select
             radius $radius
             transition 0.15s ease
-            colors $light $darker $dark
+            c $light $darker $dark
             box-shadow 0 2px 4px 0 inset $shadow
             + .svg-icon
                 fill $light !important
             option
-                colors $light 0 $dark
+                c $light 0 $dark
         input:not(.slider), button
             border 1px solid
             transition 0.15s ease
             background none
             radius $radius
-            colors $lighter $darker $dark
+            c $lighter $darker $dark
             box-shadow 0 2px 4px 0 inset $shadow
             &:focus
-                colors $light 0 $darker
+                c $light 0 $darker
 
         // ? UserCSS -> reset header's height.
         .has-warnings #header
@@ -138,20 +139,20 @@
     .dropdown
         .dropdown-content
             radius $radius
-            colors $lighter 0 $dark
+            c $lighter 0 $dark
             box-shadow 0 4px 8px 0 $shadow, 0 0 0 1px $darker !important
             a:first-child
                 radius $radius $radius 0 0
             a:last-child
                 radius 0 0 $radius $radius
             a:hover
-                colors $light 0 $darker
+                c $light 0 $darker
 
     #header
-        colors $lighter $darker $dark
+        c $lighter $darker $dark
         box-shadow 0 0 16px 0 $shadow
         h1, summary
-            colors $light 0 0
+            c $light 0 0
         @media (min-width: 850px)
             border-right-style solid
         @media (max-width: 850px)
@@ -165,11 +166,11 @@
         .entry
             // Striped colors.
             &:nth-child(even)
-                colors 0 0 $t
+                c 0 0 $t
                 background linear-gradient(90deg, $darker -100%, $t)
             // Style position.
             &:nth-child(-n + 10):before, &:nth-child(11):before
-                colors $lighter 0 0
+                c $lighter 0 0
             &:hover
                 background linear-gradient(90deg, $darker, $t)
         .style-name::before
@@ -181,14 +182,14 @@
     .warnings
         padding 0.5rem
         border 1px dashed
-        colors 0 $red $dark
+        c 0 $red $dark
         // TODO: Custom setting.
         @media (max-width: 850px)
             max-height 30vh !important
 
     // * UserCSS popup.
     #message-box
-        colors 0 0 $t
+        c 0 0 $t
         // Backdrop.
         &::before
             content ""
@@ -198,40 +199,40 @@
             bottom 0
             z-index -1
             position absolute
-            colors 0 0 $darker
+            c 0 0 $darker
             opacity 0.8
         // Wrapper element.
         > div
             radius $radius
-            colors 0 0 $t
+            c 0 0 $t
             box-shadow 0 0 0 1px $darker, 0 2px 8px -1px $shadow
         // Header.
         &-title
             radius $radius $radius 0 0
             padding: 0.75rem 2rem
-            colors 0 0 $darker
+            c 0 0 $darker
             // Logo.
             &::before
                 padding: 0 16px 16px 0
                 background-size cover
         // Body.
         &-contents
-            colors 0 0 $dark
+            c 0 0 $dark
             .config-body label
-                colors 0 $darker 0
+                c 0 $darker 0
                 &:last-child
                     padding-bottom 0.75em
             // * On/off switches.
             .onoffswitch
                 > span
-                    colors 0 0 $darker
+                    c 0 0 $darker
                     box-shadow 0 2px 4px 0 inset $shadow
                     &::before
                         transition 0.15s ease
-                        colors 0 0 $dark
+                        c 0 0 $dark
                         box-shadow inset 0 0 8px -4px $accent, 0 2px 4px -1px $shadow
                 > input:checked + span::before
-                    colors 0 0 $accent
+                    c 0 0 $accent
                     box-shadow 0 0 4px 2px inset $shadow
             .config-color
                 .color-swatch
@@ -240,7 +241,7 @@
                     box-shadow 0 0 0 1px $darker
         // Footer.
         &-buttons
-            colors $lighter 0 $dark
+            c $lighter 0 $dark
             radius 0 0 $radius $radius
             box-shadow 0 1px 0 0 inset $darker
             button
@@ -248,9 +249,9 @@
                 radius $buttons
                 transition 0.15s ease
                 background-image none
-                colors $lighter $darker $dark
+                c $lighter $darker $dark
                 &:hover
-                    colors $light 0 $darker
+                    c $light 0 $darker
 
 // Fix page colors for UserCSS source-files.
 @-moz-document regexp('^file://.*\.user\.(css|styl|stylus|less)$')
