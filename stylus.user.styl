@@ -252,20 +252,14 @@
                 &:hover
                     colors $light 0 $darker
 
-// Fix white page for UserCSS files.
+// Fix page colors for UserCSS source-files.
 @-moz-document regexp('^file://.*\.user\.(css|styl|stylus|less)$')
     :root
         --dark    dark
-        --darker  darker
-        --light   light
         --lighter lighter
-        --accent  accent
 
     $dark    = var(--dark)
-    $darker  = var(--darker)
-    $light   = var(--light)
     $lighter = var(--lighter)
-    $accent  = var(--accent)
 
     body
         color $lighter
