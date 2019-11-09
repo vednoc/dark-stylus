@@ -12,6 +12,7 @@
 @var text b_radius "Custom border radius" 4px
 
 @var color dark    "Dark color.   " #222222
+@var color darken  "Darken color. " #262626
 @var color darker  "Darker color. " #2f2f2f
 @var color light   "Light color.  " #d1d1d1
 @var color lighter "Lighter color." #c9c9c9
@@ -32,6 +33,7 @@
 @-moz-document regexp('^(moz|chrome)-extension://.*$')
     :root
         --dark    dark
+        --darken  darken
         --darker  darker
         --light   light
         --lighter lighter
@@ -52,6 +54,7 @@
 
     i       = !important
     bg      = var(--dark)
+    hl      = var(--darken)
     bd      = var(--darker)
     fg      = var(--light)
     cm      = var(--lighter)
