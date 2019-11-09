@@ -252,6 +252,38 @@
                 &:hover
                     c fg 0 bd
 
+    // CodeMirror -> Wrapper.
+    .CodeMirror
+        c fg 0 bg
+        /// Gutter background.
+        &-gutters
+            c fg 0 t
+        /// Line numbers.
+        &-linenumber
+            opacity: 0.6
+            c cm
+        &-focused
+            outline ac auto 1px
+
+    // CodeMirror -> Syntax highlighting.
+    .cm
+        &-comment
+            c cm
+        &-keyword
+            c red
+        &-variable-2, &-def
+            c fg
+        &-tag, &-builtin
+            c orange
+        &-string
+            c green
+        &-variable-3, &-type, &-property
+            c yellow
+        &-number, &-atom
+            c magenta
+        &-string, &-qualifier
+            c green
+
 // Fix page colors for UserCSS source-files.
 @-moz-document regexp('^file://.*\.user\.(css|styl|stylus|less)$')
     :root
