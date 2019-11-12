@@ -82,7 +82,7 @@
         if z is a 'call' or z is a 'rgba'
             background-color: zi is 0 ? z : z i
 
-    // * Border radius mixin.
+    // Border radius mixin.
     radius()
         border-radius arguments
 
@@ -129,12 +129,12 @@
             &:focus
                 c fg 0 bd
 
-        // ? UserCSS -> reset header's height.
+        /// UserCSS -> Reset header's height.
         .has-warnings #header
             min-height unset
             max-height 40px
 
-    // * Dropdowns.
+    // Dropdowns.
     .dropdown
         .dropdown-content
             radius r
@@ -163,11 +163,11 @@
 
     #stylus-popup
         .entry
-            // Striped colors.
+            /// Striped colors.
             &:nth-child(even)
                 c 0 0 t
                 background linear-gradient(90deg, bd -100%, t)
-            // Style position.
+            /// Style position.
             &:nth-child(-n + 10):before, &:nth-child(11):before
                 c cm
             &:hover
@@ -177,7 +177,7 @@
             transition 0.15s ease
             background none
 
-    // * UserCSS warnings.
+    // UserCSS warnings.
     .warnings
         padding 0.5rem
         border 1px dashed
@@ -186,10 +186,10 @@
         @media (max-width: 850px)
             max-height 30vh i
 
-    // * UserCSS popup.
+    // UserCSS popup.
     #message-box
         c 0 0 t
-        // Backdrop.
+        /// Backdrop.
         &::before
             content ""
             top 0
@@ -200,28 +200,30 @@
             position absolute
             c 0 0 bd
             opacity 0.8
-        // Wrapper element.
+        /// Wrapper element.
         > div
             radius r
             c 0 0 t
             box-shadow 0 0 0 1px bd, 0 2px 8px -1px sh
-        // Header.
+        /// Header.
         &-title
             radius r r 0 0
-            padding: 0.75rem 2rem
-            c 0 0 bd
-            // Logo.
+            padding 0.75rem 2.5rem
+            c 0 0 hl
+            box-shadow inset 0 -1px bd
+            /// Logo.
             &::before
-                padding: 0 16px 16px 0
+                padding 0 1rem 1rem 0
+                margin-left 0.5rem
                 background-size cover
-        // Body.
+        /// Body.
         &-contents
             c 0 0 bg
             .config-body label
                 c 0 bd
                 &:last-child
                     padding-bottom 0.75em
-            // * On/off switches.
+            /// On/off switches.
             .onoffswitch
                 > span
                     c 0 0 bd
@@ -238,11 +240,11 @@
                     border none
                     radius r
                     box-shadow 0 0 0 1px bd
-        // Footer.
+        /// Footer.
         &-buttons
             c cm 0 bg
             radius 0 0 r r
-            box-shadow 0 1px 0 0 inset bd
+            box-shadow inset 0 1px bd
             button
                 padding 0.4rem
                 radius btn
