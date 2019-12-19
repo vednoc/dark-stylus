@@ -50,7 +50,7 @@
         --white   white
         --t       transparent
         --radius  b_radius
-        scrollbar-color: var(--darker) var(--dark)
+        scrollbar-color var(--darker) var(--dark)
 
     i       = !important
     bg      = var(--dark)
@@ -72,7 +72,6 @@
     t       = var(--t)
     r       = var(--radius)
     btn     = calc(var(--radius) / 2)
-    i       = !important
 
     // Colors mixin.
     c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1)
@@ -90,7 +89,7 @@
     body
         c cm 0 bg
         svg
-            fill: cm i
+            fill cm i
         a
             transition 0.15s ease
             c fg
@@ -194,7 +193,7 @@
         c 0 0 t
         /// Backdrop.
         &::before
-            content ""
+            content ''
             top 0
             left 0
             right 0
@@ -269,7 +268,7 @@
             c fg 0 t
         /// Line numbers.
         &-linenumber
-            opacity: 0.6
+            opacity 0.6
             c cm
         &-focused
             outline ac auto 1px
