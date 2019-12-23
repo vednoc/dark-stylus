@@ -148,6 +148,21 @@
             a:hover
                 c fg 0 bd
 
+    .newUI
+        .entry
+            &.odd
+                c 0 0 hl
+            .style-name
+                &-link, &:hover .style-name-link
+                    c fg
+                &:hover::before
+                    background linear-gradient(90deg, bd -100%, t)
+            &.disabled h2::after
+                c cm 0 bd
+            /// UserCSS badges.
+            &.usercss .style-name-link::after
+                c 0 0 ac
+
     #header
         c cm bd bg
         box-shadow 0 0 16px sh
